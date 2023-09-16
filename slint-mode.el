@@ -2,7 +2,7 @@
 
 ;; Copyright (C) 2023   Niklas Cathor
 
-;; Author: Niklas Cathor
+;; Author: Niklas Cathor <niklas.cathor@gmx.de>
 ;; Keywords: languages
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -58,11 +58,11 @@
 (defconst slint-font-lock-keywords
   (list
    ;; Property key
-   '("\\(\\w+\\)\\s-*:" . font-lock-variable-name-face)
+   '("\\(\\w+\\)\\s-*:" . (1 font-lock-variable-name-face))
    ;; Component names (starting with capital letter)
    '("\\([A-Z]\\w*\\)" . font-lock-type-face)
    ;; Function call or signature
-   '("\\(\\w+\\)(" . font-lock-function-name-face)
+   '("\\(\\w+\\)(" (1 font-lock-function-name-face))
    ;; Builtin types
    `(,(regexp-opt slint-builtin-types t) . font-lock-type-face)
    ;; Keywords
@@ -74,8 +74,8 @@
         (indent-pos))
     (save-excursion
       (back-to-indentation)
-      (let ((level (car (syntax-ppss (point-at-bol)))))
-        (when (looking-at "\\s-*}")
+      (let ((level (car (syntax-ppss))))
+        (when (looking-at "\\s-*}") ; this line starts with the closing brace
           (setq level (1- level)))
         (indent-line-to (* slint-indent-level level))
         (setq indent-pos (point))))
