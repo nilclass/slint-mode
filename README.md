@@ -1,6 +1,6 @@
-# `slint-mode`: An emacs major-mode for the Slint UI language
+# slint-mode
 
-This package contains a very simple major mode for the Slint UI language.
+This package contains a very simple major-mode for the Slint UI language, to enable editing Slint files with emacs.
 
 To learn more about slint, visit https://slint.dev/.
 
