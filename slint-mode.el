@@ -48,7 +48,7 @@
 
 (defconst slint-keywords
   '("import" "export" "from" "component" "inherits"
-    "in-out" "property" "callback"))
+    "in-out" "property" "callback" "as"))
 
 (defconst slint-builtin-types
   '("angle" "bool" "brush" "color" "duration" "easing"
@@ -61,8 +61,9 @@
    '("\\(\\w+\\)\\s-*:" . (1 font-lock-variable-name-face))
    ;; Component names (starting with capital letter)
    '("\\([A-Z]\\w*\\)" . font-lock-type-face)
-   ;; Function call or signature
-   '("\\(\\w+\\)(" (1 font-lock-function-name-face))
+   ;; Function call, function signature, @image-url syntax
+   '("\\(@?\\w+\\)(" (1 font-lock-function-name-face))
+   '("\\([0-9]+\\(?:ph?x\\|rem\\)\\)" . font-lock-preprocessor-face)
    ;; Builtin types
    `(,(regexp-opt slint-builtin-types t) . font-lock-type-face)
    ;; Keywords
