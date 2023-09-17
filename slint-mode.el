@@ -1,11 +1,10 @@
-;;; slint-mode.el --- Major-mode for the Slint UI language
+;;; slint-mode.el --- Major-mode for the Slint UI language -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2023   Niklas Cathor
 
 ;; Author: Niklas Cathor <niklas.cathor@gmx.de>
 ;; Keywords: languages
-;; Version: 0.1.0
-;; Package-Requires: ((emacs "24.4"))
+;; Package-Requires: ((emacs "24.4") (lsp-mode "6.0"))
 ;; Homepage: https://github.com/nilclass/slint-mode
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -22,6 +21,8 @@
 ;; Major mode for the Slint UI language
 
 ;;; Code:
+
+(require 'lsp-mode)
 
 (defgroup slint nil
   "Major mode for Slint UI files."
@@ -102,14 +103,13 @@
   (set-syntax-table slint-mode-syntax-table)
   (set (make-local-variable 'font-lock-defaults) '(slint-font-lock-keywords)))
 
-(with-eval-after-load 'lsp-mode
-  (add-to-list 'lsp-language-id-configuration
-               '(slint-mode . "slint"))
+(add-to-list 'lsp-language-id-configuration
+             '(slint-mode . "slint"))
 
-  (lsp-register-client
-   (make-lsp-client :new-connection (lsp-stdio-connection "slint-lsp")
-                    :activation-fn (lsp-activate-on "slint")
-                    :server-id 'slint)))
+(lsp-register-client
+ (make-lsp-client :new-connection (lsp-stdio-connection "slint-lsp")
+                  :activation-fn (lsp-activate-on "slint")
+                  :server-id 'slint))
 
 (add-to-list 'auto-mode-alist '("\\.slint\\'" . slint-mode))
 
