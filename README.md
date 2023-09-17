@@ -1,3 +1,5 @@
+![](https://github.com/nilclass/slint-mode/actions/workflows/melpazoid.yml/badge.svg)
+
 # slint-mode
 
 This package contains a very simple major-mode for the Slint UI language, to enable editing Slint files with emacs.
