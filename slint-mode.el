@@ -48,7 +48,8 @@
 
 (defconst slint-keywords
   '("import" "export" "from" "component" "inherits"
-    "in-out" "property" "callback" "as"))
+    "in-out" "property" "callback" "as" "in" "out"
+    "animate"))
 
 (defconst slint-builtin-types
   '("angle" "bool" "brush" "color" "duration" "easing"
@@ -63,7 +64,10 @@
    '("\\([A-Z]\\w*\\)" . font-lock-type-face)
    ;; Function call, function signature, @image-url syntax
    '("\\(@?\\w+\\)(" (1 font-lock-function-name-face))
-   '("\\([0-9]+\\(?:ph?x\\|rem\\)\\)" . font-lock-preprocessor-face)
+   ;; Colors
+   '("\\(#[0-9a-zA-Z]+\\)" . font-lock-preprocessor-face)
+   ;; Numbers, with or without unit
+   '("\\([0-9]+\\(?:ph?x\\|rem\\|[mu]?s\\)?\\)" . font-lock-preprocessor-face)
    ;; Builtin types
    `(,(regexp-opt slint-builtin-types t) . font-lock-type-face)
    ;; Keywords
