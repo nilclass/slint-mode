@@ -4,6 +4,9 @@
 
 ;; Author: Niklas Cathor <niklas.cathor@gmx.de>
 ;; Keywords: languages
+;; Version: 0.1.0
+;; Package-Requires: ((emacs "24.4"))
+;; Homepage: https://github.com/nilclass/slint-mode
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -15,13 +18,18 @@
 ;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 ;; GNU General Public License for more details.
 
+;;; Commentary:
+;; Major mode for the Slint UI language
+
+;;; Code:
+
 (defgroup slint nil
-  "Major mode for Slint UI files"
+  "Major mode for Slint UI files."
   :tag "Slint"
   :group 'languages)
 
 (defcustom slint-indent-level 4
-  "Number of spaces for indentation of blocks"
+  "Number of spaces for indentation of blocks."
   :tag "Slint"
   :type 'integer
   :safe 'integerp
@@ -106,3 +114,5 @@
 (add-to-list 'auto-mode-alist '("\\.slint\\'" . slint-mode))
 
 (provide 'slint-mode)
+
+;;; slint-mode.el ends here
