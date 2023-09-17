@@ -100,7 +100,7 @@
 (define-derived-mode slint-mode prog-mode "Slint"
   "A major mode for editing Slint UI files."
   (setq-local comment-start "// ")
-  (setq-local indent-line-function 'slint-indent-line)
+  (setq-local indent-line-function #'slint-indent-line)
   (set-syntax-table slint-mode-syntax-table)
   (set (make-local-variable 'font-lock-defaults) '(slint-font-lock-keywords)))
 
