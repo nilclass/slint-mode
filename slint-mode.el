@@ -96,6 +96,7 @@
     (when (< position indent-pos)
       (goto-char indent-pos))))
 
+;;;###autoload
 (define-derived-mode slint-mode prog-mode "Slint"
   "A major mode for editing Slint UI files."
   (setq-local comment-start "// ")
@@ -111,6 +112,7 @@
                   :activation-fn (lsp-activate-on "slint")
                   :server-id 'slint))
 
+;;;###autoload
 (add-to-list 'auto-mode-alist '("\\.slint\\'" . slint-mode))
 
 (provide 'slint-mode)
