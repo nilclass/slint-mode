@@ -92,7 +92,7 @@
     (save-excursion
       (back-to-indentation)
       (let ((level (car (syntax-ppss))))
-        (when (looking-at "\\s-*}") ; this line starts with the closing brace
+        (when (looking-at "\\s-*\\s)") ; this line starts with the closing brace or bracket
           (setq level (1- level)))
         (indent-line-to (* slint-indent-level level))
         (setq indent-pos (point))))
