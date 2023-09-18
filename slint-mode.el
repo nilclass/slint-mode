@@ -4,6 +4,7 @@
 
 ;; Author: Niklas Cathor <niklas.cathor@gmx.de>
 ;; Keywords: languages
+;; Version: 0
 ;; Package-Requires: ((emacs "24.4") (lsp-mode "6.0"))
 ;; Homepage: https://github.com/nilclass/slint-mode
 
