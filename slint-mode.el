@@ -81,9 +81,9 @@
    ;; Numbers, with or without unit
    '("\\([0-9]+\\(?:ph?x\\|rem\\|[mu]?s\\)?\\)" . font-lock-preprocessor-face)
    ;; Builtin types
-   `(,(regexp-opt slint-builtin-types t) . font-lock-type-face)
+   `(,(concat "\\b" (regexp-opt slint-builtin-types t) "\\b") . font-lock-type-face)
    ;; Keywords
-   `(,(regexp-opt slint-keywords t) . font-lock-keyword-face)))
+   `(,(concat "\\b" (regexp-opt slint-keywords t) "\\b") . font-lock-keyword-face)))
 
 (defun slint-indent-line ()
   "Indent Slint UI file line."
