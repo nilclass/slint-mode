@@ -18,7 +18,7 @@
 ;; GNU General Public License for more details.
 
 ;;; Commentary:
-;; Major mode for the Slint UI language
+;; LSP-based major mode for the Slint UI language
 
 ;;; Code:
 
