@@ -59,7 +59,7 @@
 (defconst slint-keywords
   '("import" "export" "from" "component" "inherits"
     "in-out" "property" "callback" "as" "in" "out"
-    "animate" "struct" "for"))
+    "animate" "struct" "for" "self" "parent"))
 
 (defconst slint-builtin-types
   '("angle" "bool" "brush" "color" "duration" "easing"
@@ -74,6 +74,8 @@
    '("\\([A-Z]\\w*\\)" . font-lock-type-face)
    ;; Function call, function signature, @image-url syntax
    '("\\(@?\\w+\\)(" 1 font-lock-function-name-face)
+   ;; Callback
+   '("\\(\\w+\\)\\s-*=>" 1 font-lock-function-name-face)
    ;; Property declaration w/o values (for those with values, the "Property Key" rules applies)
    '("\\(?:in\\|out\\|in-out\\)\\s-+property.*?\\s-\\(\\w+\\)\\s-*;\\s-*$" 1 font-lock-variable-name-face)
    ;; Colors
