@@ -59,7 +59,8 @@
 (defconst slint-keywords
   '("import" "export" "from" "component" "inherits"
     "in-out" "property" "callback" "as" "in" "out"
-    "animate" "struct" "for" "self" "parent"))
+    "animate" "struct" "for" "self" "parent" "pure"
+    "function" "public" "return"))
 
 (defconst slint-builtin-types
   '("angle" "bool" "brush" "color" "duration" "easing"
