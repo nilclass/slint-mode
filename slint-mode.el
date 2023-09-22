@@ -78,7 +78,7 @@
    ;; Callback
    '("\\(\\w+\\)\\s-*=>" 1 font-lock-function-name-face)
    ;; Property declaration w/o values (for those with values, the "Property Key" rules applies)
-   '("\\(?:in\\|out\\|in-out\\)\\s-+property.*?\\s-\\(\\w+\\)\\s-*;\\s-*$" 1 font-lock-variable-name-face)
+   '("\\(?:in\\|out\\|in-out\\)?\\s-+property.*?\\s-\\(\\w+\\)\\s-*;\\s-*$" 1 font-lock-variable-name-face)
    ;; Colors
    '("\\(#[0-9a-zA-Z]+\\)" . font-lock-preprocessor-face)
    ;; Numbers, with or without unit
