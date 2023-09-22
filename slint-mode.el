@@ -70,7 +70,7 @@
 (defconst slint-font-lock-keywords
   (list
    ;; Property key
-   '("\\(\\w+\\)\\s-*:" 1 font-lock-variable-name-face)
+   '("\\(\\w+\\):" 1 font-lock-variable-name-face)
    ;; Component names (starting with capital letter)
    '("\\([A-Z]\\w*\\)" . font-lock-type-face)
    ;; Function call, function signature, @image-url syntax
